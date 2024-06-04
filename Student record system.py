@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 import sqlite3
-
 conn = sqlite3.connect('student_record_system.db')
 cursor = conn.cursor()
 
@@ -15,30 +14,26 @@ class StudentRecordSystem:
     def __init__(self, root):
         self.root = root
         self.root.title("Student Record System")
-
+      
         # Create frames
         self.frame1 = tk.Frame(self.root)
         self.frame1.pack()
         self.frame2 = tk.Frame(self.root)
         self.frame2.pack()
-
+      
         # Create labels and entry fields
         tk.Label(self.frame1, text="Name:").grid(row=0, column=0)
         self.name_entry = tk.Entry(self.frame1)
         self.name_entry.grid(row=0, column=1)
-
         tk.Label(self.frame1, text="Roll No:").grid(row=1, column=0)
         self.roll_no_entry = tk.Entry(self.frame1)
         self.roll_no_entry.grid(row=1, column=1)
-
         tk.Label(self.frame1, text="Email:").grid(row=2, column=0)
         self.email_entry = tk.Entry(self.frame1)
         self.email_entry.grid(row=2, column=1)
-
         tk.Label(self.frame1, text="Phone:").grid(row=3, column=0)
         self.phone_entry = tk.Entry(self.frame1)
         self.phone_entry.grid(row=3, column=1)
-
         tk.Label(self.frame1, text="Address:").grid(row=4, column=0)
         self.address_entry = tk.Entry(self.frame1)
         self.address_entry.grid(row=4, column=1)
@@ -68,7 +63,7 @@ class StudentRecordSystem:
         self.email_entry.delete(0, tk.END)
         self.phone_entry.delete(0, tk.END)
         self.address_entry.delete(0, tk.END)
-
+      
         messagebox.showinfo("Success", "Student added successfully!")
 
     def update_student(self):
