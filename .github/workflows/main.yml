@@ -1,0 +1,18 @@
+name: Deploy to Replit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Run Deployment
+      env:
+        REPLIT_URL: ${{ vars.REPLIT_URL }}
+      run: curl -X POST "${{ env.https://dc48df4f-3052-45dd-a7d6-31eda8a3f192-00-nkdibbgdmksk.sisko.replit.dev/ }}"
