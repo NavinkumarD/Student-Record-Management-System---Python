@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     environment:
-      name: Production
+      name: Student record management system using python
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
