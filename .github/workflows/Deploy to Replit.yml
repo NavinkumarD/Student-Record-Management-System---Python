@@ -9,10 +9,12 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Run Deployment
+      - name: Deploy to Replit
         env:
           REPLIT_URL: "https://dc48df4f-3052-45dd-a7d6-31eda8a3f192-00-nkdibbgdmksk.sisko.replit.dev/"
-        run: curl -X POST "${{ env.REPLIT_URL }}"
+        run: |
+          echo "Starting deployment to Replit..."
+          curl -X POST "${{ env.REPLIT_URL }}"
